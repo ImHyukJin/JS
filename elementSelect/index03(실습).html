@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    
+    ID:<input type = "text" id = 'asd'> 기억하기 <input type ="checkbox" id="bool" > <button type="button" id = "btn">확인하기</button>
+
+
+    <hr>
+    <h1 id="lang">단어</h1>
+    <h2>힌트 : select는 change이벤트 일껄?</h2>
+
+    <select id = "sss">
+        <option id="1" onclick = "checked(this)">안녕하세요</option>
+        <option id="2" onclick = "checked(this)">영어</option>
+        <option id="3" onclick = "checked(this)">러시아어</option>
+        <option id="4" onclick = "checked(this)">중국어</option>
+        <option id="5" onclick = "checked(this)">일본어</option>
+    </select>
+
+    <script>
+      var sss =   document.getElementById("sss");
+
+      var lang = document.getElementById("lang");
+
+      var btn = document.getElementById('btn');
+
+      sss.addEventListener('change',function(){
+         if(sss.value=='영어'){
+            lang.innerHTML = '영어입니다'
+         }else if(sss.value=='러시아어'){
+            lang.innerHTML='러시아어입니다'
+         }else if(sss.value = '중국어'){
+            lang.innerHTML='중국어입니다'
+         }else if(sss.value = '일본어'){
+            lang.innerHTML='일본어입니다'
+         }
+         
+         
+         document.querySelector('body').style.backgroundColor='black';
+         document.querySelector('body').style.color='white';
+        }
+      )
+      
+    //   sss.onchange = function(){
+    //     document.querySelector('body').style.backgroundColor ='black';
+    //     document.querySelector('body').style.color='white';
+
+    //     if(sss.value=='영어'){
+    //         lang.innerHTML = '영어입니다'
+    //      }else if(sss.value=='러시아어'){
+    //         lang.innerHTML='러시아어입니다'
+    //      }else if(sss.value = '중국어'){
+    //         lang.innerHTML='중국어입니다'
+    //      }else if(sss.value = '일본어'){
+    //         lang.innerHTML='일본어입니다'
+    //      }
+    //   }
+    
+      
+
+
+
+
+    
+
+
+      var asd = document.getElementById('asd');
+      
+      var bool = document.getElementById("bool");
+          //   if(document.getElementById('bool')){
+
+    //   }
+
+      btn.onclick = function(){
+        alert("사용자가 입력한 값 : " + asd.value + ", id기억하기 여부 : " + bool.checked);     
+      }
+
+      
+    //   btn.onclick = function(){
+    //         msg.innerHTML = input.value; //msg에 값을 넣는다.
+    //         input.value = ""; //사용자가 입력한 값을 비운다.
+    //     }
+
+    </script>
+</body>
+</html>

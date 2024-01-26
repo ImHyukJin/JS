@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .select{
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>이 셀렉트 태그에는 change라는 이벤트를 걸기(이벤트를 거는방법은 자유)</h3>
+
+    <select id="select" onchange="document.querySelector('body').style.backgroundColor='aqua';">
+        <option>홍길동</option>
+        <option>이순신</option>
+        <option>강감찬</option>
+    </select>
+
+    <!-- <script>
+        var select = document.getElementById("select");
+
+        select.addEventListener('change',function(){
+            alert('바뀜');
+                })
+    </script> -->
+
+    <h3>focuse 이벤트와 , blur이벤트를 걸기</h3>
+    이름:<input id = 'focus' type="text">
+
+    <script>
+        var focus = document.getElementById('focus');
+
+        focus.addEventListener('focus',function(){
+           this.style.background = 'gray';
+           // alert("focus");
+        })
+        
+        focus.addEventListener('blur',function(){
+            this.style.background = 'aqua';
+            // alert("blur");
+            focus.placeholder = "너 이름이 머니?"
+        })
+    </script>
+
+
+    <h3>mouseenter이벤트 걸기</h3>
+    <textarea id = "mouseenter" style ="width: 100px; height: 100px; border:1px solid #777">
+    
+        </textarea>
+        <script>
+            var me = document.getElementById('mouseenter');
+
+            // me.addEventListener('mouseenter',function(){
+            //     alert('마우스엔터');    
+            // })
+            
+          me.onmouseenter = function(){
+               this.style.width ='200px';
+            }
+
+            me.onmouseout = function(){
+                this.style.width = '100px';
+            }
+        </script>
+</body>
+</html>
