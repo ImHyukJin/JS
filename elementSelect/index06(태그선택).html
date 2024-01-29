@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type = "button" id = "btn">버튼</button>
+    <ul class="list">
+        <li>홍길동</li>
+        <li>이순신</li>
+        <li>홍길자</li>
+    </ul>
+    <button type = "button" id="btn2">클릭!!!</button>
+    <ul class="list2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        //querySlector(선택자)
+        var li = document.querySelector(".list li"); //가장 첫번째 발견되는 태그
+
+        var btn = document.querySelector("#btn"); //아이디가 btn인 태그
+        btn.onclick = function(){
+
+            list.style.backgroudnColor = "red";
+        }
+
+        //querySelectorAll(선택자)
+
+        var lis = document.querySelectorAll(".list2 li");// 클래스 list2 하위의 li태그
+
+        
+
+    </script>
+</body>
+</html>

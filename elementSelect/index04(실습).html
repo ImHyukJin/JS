@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>자바스크립트 카운트 innerHTML value 속성</h1>
+    <input type ='number' id = 'val' value = "0" onclick=""> 
+    <button type = 'button' onclick ='plus()'>+</button> 
+    <button type = 'button' id = 'minus'>-</button>
+
+    <script>
+        var minus = document.getElementById('minus');
+        minus.addEventListener('click', function () {
+            if(val.value ==0){
+                alert('0이하로 내려갈 수 없습니다.')
+            }else {
+                val.value--;
+            }
+            
+        })
+
+        function plus(){
+            val.value++;
+        }
+
+    </script>
+</body>
+</html>

@@ -34,8 +34,34 @@
 
       var btn = document.getElementById('btn');
 
-      sss.addEventListener('change',function(){
-         if(sss.value=='영어'){
+      var a =Math.ceil((Math.random()+1)*400);
+      var b =Math.ceil((Math.random()+1)*400);
+      var c =Math.ceil((Math.random()+1)*400);
+
+      // sss.addEventListener('change',function(){
+      //    if(sss.value=='영어'){
+      //       lang.innerHTML = '숫자의색깔은';
+      //       lang.style.color='#' + a;
+      //       console.log('#'+a);
+      //   }else if(sss.value=='러시아어'){
+      //       lang.innerHTML='러시아어입니다'
+      //    }else if(sss.value = '중국어'){
+      //       lang.innerHTML='중국어입니다'
+      //    }else if(sss.value = '일본어'){
+      //       lang.innerHTML='일본어입니다'
+      //    }
+         
+         
+        //  document.querySelector('body').style.backgroundColor='black';
+        //  document.querySelector('body').style.color='white';
+      //   }
+      // )
+      
+      sss.onchange = function(){
+        document.querySelector('body').style.backgroundColor ='black';
+        document.querySelector('body').style.color='white';
+
+        if(sss.value=='영어'){
             lang.innerHTML = '영어입니다'
          }else if(sss.value=='러시아어'){
             lang.innerHTML='러시아어입니다'
@@ -44,27 +70,7 @@
          }else if(sss.value = '일본어'){
             lang.innerHTML='일본어입니다'
          }
-         
-         
-         document.querySelector('body').style.backgroundColor='black';
-         document.querySelector('body').style.color='white';
-        }
-      )
-      
-    //   sss.onchange = function(){
-    //     document.querySelector('body').style.backgroundColor ='black';
-    //     document.querySelector('body').style.color='white';
-
-    //     if(sss.value=='영어'){
-    //         lang.innerHTML = '영어입니다'
-    //      }else if(sss.value=='러시아어'){
-    //         lang.innerHTML='러시아어입니다'
-    //      }else if(sss.value = '중국어'){
-    //         lang.innerHTML='중국어입니다'
-    //      }else if(sss.value = '일본어'){
-    //         lang.innerHTML='일본어입니다'
-    //      }
-    //   }
+      }
     
       
 

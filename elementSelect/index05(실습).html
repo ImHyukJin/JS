@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    1. 예약버튼 클릭시 좌석이 최소 한 개 이상 체크되어 있지 않다면 경고창을 띄우는 코드를 작성하여 주세요. <br>
+    2. 체크된 값은 예약확인란에 출력해주세요.<br>
+    3. 힌트 - 버튼 클릭 시 배열에 값을 저장하고, 화면에는 문자열로 만들어 출력 합니다. <br>
+
+    좌석<span id="val">
+        <input type="checkbox" id = "1" onclick = "add(this)">1
+        <input type="checkbox" id = "2" onclick = "add(this)">2
+        <input type="checkbox" id = "3" onclick = "add(this)">3
+        <input type="checkbox" id = "4" onclick = "add(this)">4
+        <input type="checkbox" id = "5" onclick = "add(this)">5
+        <input type="checkbox" id = "6" onclick = "add(this)">6
+        <input type="checkbox" id = "7" onclick = "add(this)">7
+        <input type="checkbox" id = "8" onclick = "add(this)">8
+        <input type="checkbox" id = "9" onclick = "add(this)">9
+        <input type="checkbox" id = "10" onclick = "add(this)">10
+        <input type="checkbox" id = "11" onclick = "add(this)">11
+  
+    </span>
+    <br>
+
+    <button type="button" onclick="check()">예약</button>
+    <br>
+    예약번호 : <div id="res"> </div>
+
+
+    <script>
+       var alist = new Array();
+       function add(number) {
+        if(number.checked){
+            alist.push(number.id);
+        }else {
+            alist.pop(number.id);
+        }
+        alist.sort();
+       
+       }
+
+       function check(){
+
+        if(alist.length===0){
+            alert('좌석을 1개 이상 선택하여 주십시오')
+        }else{
+
+            var string = '';
+            for(var i = 0 ; i < alist.length ; i++){
+                string  +=  alist[i] +'번 '; 
+                
+            }
+            res.innerHTML = string;
+        }
+    }
+     
+
+    </script>
+</body>
+
+</html>

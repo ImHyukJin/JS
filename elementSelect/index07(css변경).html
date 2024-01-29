@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     
+    <h3>태그의 속성변경 , 태그의 css변경</h3>
+
+    <img src = "img/KakaoTalk_20240129_141948200.jpg" width = "500px" class="img" style = "border: 10   px solid #777;">
+    <select class = 'sel'>
+        <option value=".jpg">봄</option>
+        <option value="_01.jpg">여름</option>
+        <option value="_02.jpg">가을</option>
+        <option value="_03.jpg">겨울</option>
+    </select>
+
+    <button type = "button" id = "btn" > 사진바꾸기</button>
+    <input type="color" class="color">
+    <button type = "button" id="btn2">색상바꾸기</button>
+    <script>
+        var btn = document.getElementById("btn"); //버튼태그
+        var img =document.querySelector(".img"); //img태그
+        var sel = document.querySelector(".sel"); //select 태그
+        var btn2 = document.getElementById("btn2");//버튼2
+        var col = document.querySelector(".color");
+
+        btn.onclick = function(){
+            img.src = "img/KakaoTalk_20240129_141948200"+sel.value;
+        }
+
+        btn2.onclick = function() {
+            img.style.borderColor = col.value;
+        }
+    </script> -->
+
+    <h1>요소 속성 곧바로 변경하기</h1>
+
+    <!-- onchange -->
+
+    <img src= "img/KakaoTalk_20240129_141948200.jpg" width="500px" class="img" style="border: 10px solid #777;">
+    <select class = 'sel' onchange="check()">
+        <option value=".jpg">봄</option>
+        <option value="_01.jpg">여름</option>
+        <option value="_02.jpg">가을</option>
+        <option value="_03.jpg">겨울</option>
+    </select>
+    <input type = "color" class = "color" onchange="col()">
+
+    <script>
+        var img = document.querySelector(".img");
+        var sel = document.querySelector(".sel");
+
+        var color = document.querySelector(".color");
+
+        function check(){
+            img.src = "img/KakaoTalk_20240129_141948200"+sel.value;
+        }
+        
+
+        function col(){
+            img.style.borderColor=color.value;
+        }
+
+        
+    </script>
+
+
+</body>
+</html>
