@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="target">특정태그 삭제 remove</div>
+    <button type="button" id="btn">특정태그삭제</button>
+
+
+    <script>
+        var target = document.querySelector(".target");
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function() {
+
+            target.remove();//
+        }
+    </script>
+
+    <hr>
+
+    <button type = "button" id="add">추가하기</button>
+    <button type = "button" id="remove">삭제하기</button>
+
+    <ul class="list">
+
+    </ul>
+
+    <script>
+        var add = document.getElementById("add");
+        var remote = document.getElementById("remove");
+        var list = document.querySelector(".list");
+
+        var count = 1;
+
+        add.onclick = function() {
+            
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.href = "#";
+            a.innerHTML = count++ + " .홍길동";
+
+            li.appendChild(a); //li자식으로 a추가
+            list.appendChild(li); //list자식으로 li추가
+
+
+        }
+
+
+        //삭제하기
+        remove.onclick = function() {
+
+            list.removeChild(list.firstElementChild);
+        }
+    </script>
+</body>
+</html>

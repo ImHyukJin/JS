@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .top > input{
+            
+        }
+    </style>
+</head>
+<body>
+        할일 삭제 기능은 button을 생성할 때 이벤트를 주면 됩니다
+        input은 지우는게 아니라,display: none 으로 제어 하세요
+
+        <p>할일 목록 만들기</p>
+        <div class="top">
+            <input type="text" placeholder="이름을 입력하세요"> <button type="button" onclick="pushName();">확인</button>
+        </div>
+
+        <p class="pollName"> </p>
+
+        <script>
+            function pushName(){
+                var top = document.querySelector(".top");
+                var text = document.querySelector(".top > input");
+                var pollName = document.querySelector(".pollName");
+
+                pollName.innerHTML = text.value + "님 안녕하세요";
+                top.style.display = "none";
+            }
+        </script>
+
+        <input id="doIt" type="text" placeholder="당신의 할일을 적으세요"> <button type="button" onclick="pushDO();">확인</button>
+
+        <ul class="list">
+
+        </ul>
+        <script>
+            var index = 0;
+            function pushDO(){
+                var doIt = document.getElementById("doIt");
+                var list = document.querySelector(".list");
+
+                var li = document.createElement("li");
+                li.innerHTML = doIt.value + '<button type="button" onclick="del(this);">X</button>'
+
+                list.appendChild(li);
+                doIt.value = "";
+
+            }
+
+            function del(jjj){
+
+                jjj.parentElement.remove() = "none";
+            }
+        </script>
+
+        
+
+
+    
+</body>
+</html>

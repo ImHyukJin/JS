@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>.head {
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='head'>
+        할일삭제 기능은 button을 생성할 때 이벤트를 주면 됩니다.<br>
+        input은 지우는게 아니라 , display:none으로 제어하세요<br>
+        할일 목록만들기<br>
+    </div>
+    <div class="hi">
+
+    </div>
+    <div class="first">
+        <input type="text" id="name" placeholder="이름을 입력하세요">
+        <button type="button" id="btn1">확인</button>
+    </div>
+    <div class="second">
+        <input type="text" id="todo" placeholder="당신의 할 일을 적으세요">
+        <button type="button" id="btn2">확인</button>
+    </div>
+
+    <ul class="list">
+
+    </ul>
+
+    <script>
+        var first = document.querySelector(".first");
+        var hi = document.querySelector(".hi");
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        
+        btn1.onclick = function () {
+            var name = document.getElementById("name");
+            if (name.value.length == 0) {
+                
+            } else {
+                first.style.display = 'none';
+                hi.innerHTML = name.value + "님 안녕하세요";
+                hi.style.fontWeight = 'bold';
+            }
+        }
+        
+        btn2.onclick = function () {
+            var todo = document.getElementById("todo");
+            var list = document.querySelector(".list");
+            var li = document.createElement("li");
+            var btn = document.createElement("input");
+            btn.type = "button";
+            
+            
+
+            li.innerHTML = todo.value;
+            todo.value ="";
+            btn.value = 'X';
+            btn.onclick = function() {
+               li.remove();
+            }
+
+            list.appendChild(li);
+            li.appendChild(btn);
+
+        }
+    </script>
+</body>
+
+</html>
