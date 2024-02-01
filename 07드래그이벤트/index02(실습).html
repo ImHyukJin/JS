@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{list-style: none; margin:0; padding: 0;}
+
+        .wrap { display: flex; flex-direction: column; justify-content: center; align-items: center;} 
+        .list {display: flex; width: 900px; flex-flow:row wrap; justify-content: space-between;}
+        .list li { border : 1px solid #777 ; width:180px ; height: 280px; padding:20px; margin-top: 10px;}
+        img { width: 100%;height: auto;}
+
+    </style>
+</head>
+<body>
+ 
+    <div class= "wrap">
+        <h3>제목</h3>
+
+        <ul class = "list">
+            <li class ="box"><img src ="img/KakaoTalk_20240117_152522631.jpg" draggable="true" class="img"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+        </ul>
+    </div>
+
+    <script>
+        var list = document.querySelector(".list");
+        var img = document.querySelector(".box > img");
+        var wrap = document.querySelector(".wrap");
+        var box =  document.querySelector(".box");
+
+  
+
+        list.addEventListener("dragover" ,function(e){
+            e.preventDefault();
+            if(event.target.tagName != "LI") return;
+        });
+
+        list.addEventListener("drop",function(e) {
+            if(e.target.tagName != "LI")return;
+            e.preventDefault();
+            e.target.appendChild(img);
+        } );
+    </script>
+</body>
+</html>

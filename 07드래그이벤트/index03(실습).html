@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul , li {list-style: none;}
+        *{margin: 0; padding:0;}
+        .wrap{ text-align: center; display: flex; flex-direction: column; justify-content: center ; align-items: center; overflow: hidden;}
+        .list{
+            display: flex;
+            flex-flow: row wrap;
+            width: 900px;
+            justify-content: space-between;
+
+        }
+        .list li {
+            border: 1px solid #777;
+            width: 180px;
+            height: 280px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .zone{
+           float:right;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class = "wrap">
+        <h3>드랍아이템 만들기</h3>
+        <h3>1.li는 이벤트위임방법을 사용하여 처리하면 만점</h3>
+
+        <ul class="list">
+            <li class="box" draggable="true">아이템1</li>
+            <li class="box"draggable="true">아이템2</li>
+            <li class="box"draggable="true">아이템3</li>
+            <li class="box"draggable="true">아이템4</li>
+            <li class="box"draggable="true">아이템5</li>
+            <li class="box"draggable="true">아이템6</li>
+            <li class="box"draggable="true">아이템7</li>
+            <li class="box"draggable="true">아이템8</li>
+        </ul>
+
+        <div class="zone">
+            das
+        </div>
+    </div>
+</body>
+</html>

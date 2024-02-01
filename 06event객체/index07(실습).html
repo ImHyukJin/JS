@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table{
+            border :1px solid #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>각 버튼별로 묶어서 각각의 기능을 콘솔로 출력해주세요</h1>
+
+    <button type ="button" id="add">추가하기</button>
+    <button type ="button" id="delete">삭제하기</button>
+    <table calss ="table">
+        <tr>
+            <th>번호</th>
+            <th>과정명</th>
+            <th>담당교수</th>
+            <th>관리</th>
+        </tr>
+        
+        <tr>
+            <td>1</td>
+            <td>강남응용자바</td>
+            <td>홍길동</td>
+            <td> 
+                <button type ="button" class = "btn 정보">시험기본정보</button>
+                <button type ="button" class = "btn 출제">시험출제</button>
+                <button type ="button" class = "btn 결과">시험결과</button>
+                <button type ="button" class = "btn 관리">성적관리</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>종로응용자바</td>
+            <td>홍길동</td>
+            <td> 
+                <button type ="button" class = "btn 정보">시험기본정보</button>
+                <button type ="button" class = "btn 출제">시험출제</button>
+                <button type ="button" class = "btn 결과">시험결과</button>
+                <button type ="button" class = "btn 관리">성적관리</button>
+            </td>
+        </tr>
+
+        
+    </table>
+
+    <script>
+        var table = document.querySelector("table");
+
+        table.onclick = function() {
+            if(event.target.tagName != "BUTTON") {
+                return;
+            }
+            if(event.target.classList.contains('정보')){
+                console.log('시험기본정보');
+            }else if(event.target.classList.contains('출제')){
+                console.log('시험출제');
+            }else if(event.target.classList.contains('결과')){
+                console.log('시험결과');
+            }else if(event.target.classList.contains('관리')){
+                console.log('성적관리');
+            }
+        }
+
+        var add = document.getElementById("add");
+
+        add.onclick = function() {
+
+        };
+
+        var del = document.getElementById("delete");
+
+        d
+    </script>
+</body>
+</html>
