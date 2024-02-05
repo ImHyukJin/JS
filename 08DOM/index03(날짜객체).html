@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //현재 날짜
+        var date = new Date();
+        var date2 = new Date(2024, 2, 2 ,24 , 20 , 20); //날짜지정
+        console.log(date);
+        console.log(date2);
+
+
+        //---------------
+        
+        console.log(date.getTime()); //현재시간 밀리초 ( 날짜 차이를 계산할 때 사용)
+
+        console.log(date.toUTCString()); //세계 협정시
+        console.log(date.toLocaleTimeString());//각 국의 시간을 나타냄
+        console.log(date.toISOString());//세계표준시 
+
+
+        //년 월 일 시분초
+        console.log(date.getFullYear())//
+        console.log(date.getMonth())
+        console.log(date.getDate())//
+        console.log(date.getHours())//
+
+    </script>
+</body>
+</html>
