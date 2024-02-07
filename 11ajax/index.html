@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //1st
+        // fetch('example.txt').then(function(response) {
+        //     response.text().then(function(data) {
+        //         console.log(data);
+        //     })
+        // })
+
+        //2nd - fetch는 Promise객체를 반환
+        //promise
+        //1. pending - 대기,수행중
+        //2. fullfuilled -성공함
+        //3. reject - 거절당함
+
+        //then함수에 콜백함수를 넣어주면 , 요청이 완료되는데로 , 콟개에 결과를 넣어준다.
+        //콜백함수? - 성공결과를 돌려받을 약속된 함수
+
+
+        var promise = fetch("example.txt");
+        // console.log(promise)
+        // promise.then(callback);
+
+
+        // function callback(response) {
+        //     console.log(response);
+        // }
+
+        // promise.then(function(response) {
+        //     console.log(response)
+        //     console.log(1);
+        // })
+
+        //3rd
+        //  console.log(1);
+        // fetch('example.txt').then(function(response) {
+        //     console.log(2);
+        //     if(response.status == 200) { //응답성공 -> 작업을 수행해도 된다
+
+        //     }
+        // })
+
+        // console.log(3);
+
+        //4th
+        // fetch('example.txt')
+        // .then(function(response){
+        //     if(response.status == 200){
+        //        //response.text() -> 반환 Promise객체
+        //        //then() 사용 가능
+
+        //        //text() -> 문자열로 형변환
+        //        //json() -> 오브젝트로 형변환
+        //        //formData() -> 폼객체형태로 변환
+
+        //       response.text().then(function(data) {
+        //         console.log(data);
+        //       })
+        //       promise.then()
+        //     }
+        // })
+
+        //5th - 콜백에서 리턴을 걸면 다시 fetch에서 then절로 그 결과를 받을 수 있다.
+        fetch('example.txt').then(function(response) {
+            return response.text();
+        })
+        .then(function(data){
+            return data + "hello";
+        })
+        .then(function(data) {
+            return data + "bye";
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+
+        //6nd - 서로 약속된 형식의 json or xml형식을 사용함
+        fetch("example.json")
+        .then(function(response){
+            return response.json(); //json.parse를 대신함
+        })
+        .then(function(data){
+            console.log(data); //확인
+        })
+    </script>
+</body>
+</html>
