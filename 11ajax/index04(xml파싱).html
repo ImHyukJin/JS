@@ -6,8 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+    asdasd
+    <ul class = "list">
+        <li>
+            asd
+        </li>
+    </ul>
     <script>
+        var list = document.querySelector(".list");
+        var str = '';
         //xml파일을 변환하는 방법
         fetch("example.xml")
         .then(function(response) {
@@ -20,16 +27,29 @@
            var result =  parsor.parseFromString(data, "text/xml") //파싱할 데이터 , 타입
 
            //DOM에 접근하는 방법으로 접근이가능
-           console.log(result);
-           var datas =result.querySelector("data") //data태그를 얻는다
+           console.log('result : ' + result);
 
+           console.log('data : ' + data);
+           var datas =result.querySelectorAll("data") //data태그를 얻는다
+
+           console.log(datas);
+        //    var datas1 = data.querySelector("data");
+
+           console.log("datas " + datas.length);
+
+        //    console.log("datas1 " +datas1.length)
+
+         
            for(var i = 0 ; i < datas.length ; i++){
             // datas[i].firstElemntChild[0]
             var name = datas[i].querySelector("name")
             var version = datas[i].querySelector("version")
             var price = datas[i].querySelector("price")
+
+            str += name + version + price +"<br>"
            }
         })
+        list.innerHTML = str;
     </script>
 </body>
 </html>
